@@ -1,0 +1,4 @@
+docker run --name postgres-db -e POSTGRES_PASSWORD=mysecretpassword -e POSTGRES_USER=postgres -e POSTGRES_DB=mydatabase -p 5432:5432 -d postgres:15
+docker ps
+docker exec -it postgres-db psql -U postgres -d mydatabase
+docker stop postgres-db
