@@ -1,0 +1,21 @@
+commands to connect to remote machine and building docker in it 
+
+//  Run this command, if necessary, to ensure your key is not publicly viewable ".pem key"
+chmod 400 "drizzy-1.pem"
+
+// Connect to your instance using its Public DNS:
+ssh -i "drizzy-1.pem" ec2-user@ec2-13-60-187-134.eu-north-1.compute.amazonaws.com
+
+// this will simply ensure that all essential packages on that remote machine are updated and are using their latest version
+ sudo yum update -y or sudo dnf update -y
+
+ // this allows us to install docker on our remote machine 
+ sudo dnf install -y docker
+
+ // this allows us to start docker on our remote machine
+ sudo service docker start
+
+ ***// sudo allows us the command to be executed as root user with sufficient permission
+
+
+ // when you are not using ssh to interact with your instance you have to configure the security group on aws to use it 
